@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>A simple .NET tool to execute other dotnet tools without installing them globally or in a project.</Description>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <Nullable>Enable</Nullable>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <PackageProjectUrl>https://github.com/piraces/dotnet-tool-run/blob/master/README.md</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>dotnet, global tools, run, run once</PackageTags>
+    <Copyright>Raúl Piracés</Copyright>
+    <Authors>Raúl Piracés (@piraces_)</Authors>
+    <PackAsTool>true</PackAsTool>
+  </PropertyGroup>
+</Project>
