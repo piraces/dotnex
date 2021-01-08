@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Security;
 using System.Threading.Tasks;
@@ -11,11 +12,13 @@ namespace dotnettoolrun
     public class ToolHandler
     {
         private const string TEMP_FOLDER_NAME = "dotnettoolrun";
+        private const string NUGET_URL = "https://www.nuget.org/packages/";
 
         private readonly string[] _toolManifestCliProcessArgs = { "new", "tool-manifest", "--force" };
 
         private readonly CliCommandLineWrapper _dotnetManifestCommand;
         private readonly CliCommandLineWrapper _dotnetInstallCommand;
+        private static HttpClient _httpClient = new HttpClient();
 
         private string _tempPath = Assembly.GetExecutingAssembly().Location;
         private string _toolName;
@@ -33,10 +36,20 @@ namespace dotnettoolrun
 
         public async Task<int> StartTool()
         {
-            await _dotnetManifestCommand.StartCliCommand();
+            var manifestProcessResult = await _dotnetManifestCommand.StartCliCommand();
+            if (manifestProcessResult > 0)
+            {
+                Console.WriteLine("[X] Could not create manifest for tool. Check if this program is allowed to write in the current directory.");
+                return 1;
+            }
             await _dotnetInstallCommand.StartCliCommand();
-
             return await StartToolProcess();
+        }
+
+        public async Task<bool> CheckValidTool()
+        {
+            var response = await _httpClient.GetAsync($"{NUGET_URL}{_toolName}");
+            return response.IsSuccessStatusCode;
         }
         
         private void InitializeTempFolder()

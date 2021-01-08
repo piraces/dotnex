@@ -1,4 +1,5 @@
-﻿using System.CommandLine;
+﻿using System;
+using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.Threading.Tasks;
 
@@ -12,10 +13,10 @@ namespace dotnettoolrun
             var rootCommand = new RootCommand
             {
                 new Option<string>(
-                    "--version",
+                    new[]{ "--version", "-v" },
                     "Version of the tool to use"),
                 new Option<string>(
-                    "--framework",
+                    new[]{ "--framework", "-f" },
                     "Target framework for the tool"),
                 new Argument<string>("TOOL", "The NuGet Package Id of the tool to execute"),
                 new Argument<string[]>("TOOL-ARGS", "Arguments to pass to the tool to execute")
@@ -30,7 +31,13 @@ namespace dotnettoolrun
         {
             var finalToolArgs = toolArgs != null ? string.Join(' ', toolArgs) : null;
             var toolHandler = new ToolHandler(tool, version, framework, finalToolArgs);
-            return await toolHandler.StartTool();
+            var existingPublishedTool = await toolHandler.CheckValidTool();
+            if (existingPublishedTool)
+            {
+                return await toolHandler.StartTool();
+            }
+            Console.WriteLine($"[X] The specified tool '{tool}' does not exist... Please check the correct name at https://www.nuget.org/packages");
+            return 1;
         }
     }
 }

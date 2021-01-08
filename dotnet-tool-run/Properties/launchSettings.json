@@ -12,6 +12,10 @@
       "commandName": "Project",
       "commandLineArgs": "-v 2.1.4 dotnetsay hello world"
     },
+    "dotnettoolrun with version and framework": {
+      "commandName": "Project",
+      "commandLineArgs": "-v 2.1.4 -f netcoreapp1.0 dotnetsay hello world"
+    },
     "dotnettoolrun help": {
       "commandName": "Project",
       "commandLineArgs": "-h"
