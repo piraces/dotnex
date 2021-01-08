@@ -1,6 +1,7 @@
 # dotnet-tool-run
 
 ![.NET Tool Release](https://github.com/piraces/dotnet-tool-run/workflows/.NET%20Tool%20Release/badge.svg)
+![Nuget](https://img.shields.io/nuget/v/dotnet-tool-run)
 
 A simple .NET tool to execute other dotnet tools without installing them globally or in a project (a similar approach to [npx](https://www.npmjs.com/package/npx) from [npm](https://www.npmjs.com/)).
 
