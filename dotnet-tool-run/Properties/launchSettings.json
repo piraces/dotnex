@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "dotnettoolrun only tool": {
+      "commandName": "Project",
+      "commandLineArgs": "dotnetsay"
+    },
+    "dotnettoolrun multiple arguments": {
+      "commandName": "Project",
+      "commandLineArgs": "dotnetsay hello world"
+    },
+    "dotnettoolrun with version": {
+      "commandName": "Project",
+      "commandLineArgs": "-v 2.1.4 dotnetsay hello world"
+    },
+    "dotnettoolrun help": {
+      "commandName": "Project",
+      "commandLineArgs": "-h"
+    }
+  }
+}

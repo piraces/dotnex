@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "dotnettoolrun": {
-      "commandName": "Project",
-      "commandLineArgs": "dotnetsay"
-    }
-  }
-}

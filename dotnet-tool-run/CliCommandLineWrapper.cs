@@ -20,7 +20,7 @@ namespace dotnettoolrun
                 RedirectStandardOutput = redirectOutput,
                 WindowStyle = processWindowStyle
             };
-            _toolCliProcess.StartInfo.ArgumentList.Concat(args);
+            _toolCliProcess.StartInfo.Arguments = string.Join(' ', args);
 
             if(!string.IsNullOrWhiteSpace(workingDirectory))
             {
