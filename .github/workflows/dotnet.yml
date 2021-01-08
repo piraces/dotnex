@@ -6,9 +6,7 @@ on:
 
 jobs:
   publish:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -18,4 +16,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release /p:OfficialBuild=true
     - name: Publish NuGet
-      run: dotnet nuget push .\dotnet-tool-run\bin\Release\*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TOKEN }}
+      run: dotnet nuget push ./dotnet-tool-run/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TOKEN }}
