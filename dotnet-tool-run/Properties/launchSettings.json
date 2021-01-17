@@ -16,6 +16,14 @@
       "commandName": "Project",
       "commandLineArgs": "-v 2.1.4 -f netcoreapp1.0 dotnetsay hello world"
     },
+    "dotnettoolrun with version and framework no cache": {
+      "commandName": "Project",
+      "commandLineArgs": "-v 2.1.4 -r dotnetsay hello world"
+    },
+    "dotnettoolrun clear cache": {
+      "commandName": "Project",
+      "commandLineArgs": "--remove-cache"
+    },
     "dotnettoolrun help": {
       "commandName": "Project",
       "commandLineArgs": "-h"

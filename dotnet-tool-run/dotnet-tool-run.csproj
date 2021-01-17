@@ -5,10 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>9</LangVersion>
     <Nullable>Enable</Nullable>
-    <VersionPrefix>0.1.0</VersionPrefix>
-    <PackageProjectUrl>https://github.com/piraces/dotnet-tool-run/blob/master/README.md</PackageProjectUrl>
+    <VersionPrefix>0.1.1</VersionPrefix>
+    <PackageProjectUrl>https://piraces.github.io/dotnet-tool-run/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>dotnet, global tools, run, run once</PackageTags>
+    <PackageTags>dotnet, global tools, run, run once, dotnet-cli</PackageTags>
     <Copyright>Raúl Piracés</Copyright>
     <Authors>Raúl Piracés (@piraces_)</Authors>
     <PackAsTool>true</PackAsTool>
