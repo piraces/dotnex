@@ -20,7 +20,7 @@ namespace dotnettoolrun
         private string _toolName;
         private string? _toolArgs;
         private bool _removeCache;
-        private TempFolderHandler _tempFolderHandler;
+        private string _tempFolder;
 
         public ToolHandler(string toolName, string? version = null, string? framework = null, bool removeCache = false,
             string? toolArgs = null)
@@ -28,7 +28,7 @@ namespace dotnettoolrun
             _toolName = toolName;
             _toolArgs = toolArgs;
             _removeCache = removeCache;
-            _tempFolderHandler = new TempFolderHandler();
+            _tempFolder = CacheManager.GetTempFolder();
             _dotnetManifestCommand = new CliCommandLineWrapper(_toolManifestCliProcessArgs, true);
             var installArguments = GetToolInstallCliProcessArgs(toolName, version, framework);
             _dotnetInstallCommand = new CliCommandLineWrapper(installArguments, true);
@@ -63,7 +63,7 @@ namespace dotnettoolrun
                 "install",
                 toolName,
                 "--tool-path",
-                _tempFolderHandler.TempFolder,
+                _tempFolder
             };
 
             if (!string.IsNullOrWhiteSpace(version))
@@ -85,7 +85,7 @@ namespace dotnettoolrun
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = Path.Combine(_tempFolderHandler.TempFolder, _toolName), WindowStyle = ProcessWindowStyle.Hidden,
+                    FileName = Path.Combine(_tempFolder, _toolName), WindowStyle = ProcessWindowStyle.Hidden,
                     Arguments = _toolArgs ?? string.Empty
                 }
             };
