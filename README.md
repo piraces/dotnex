@@ -55,7 +55,7 @@ Install the [dotnet cli](https://dotnet.microsoft.com/download) (included in the
 
 ```
 dotnet tool install -g dotnex
-```f
+```
 
 ### SDK version
 
