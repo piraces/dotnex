@@ -3,11 +3,11 @@ using System.IO;
 using System.Reflection;
 using System.Security;
 
-namespace dotnettoolrun
+namespace dotnex
 {
     public static class CacheManager
     {
-        private const string TEMP_FOLDER_NAME = "dotnettoolrun";
+        private const string TEMP_FOLDER_NAME = "dotnex";
         
         private static string _tempFolder = Assembly.GetExecutingAssembly().Location;
 

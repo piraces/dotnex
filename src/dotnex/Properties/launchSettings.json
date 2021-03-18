@@ -1,30 +1,30 @@
 {
   "profiles": {
-    "dotnettoolrun only tool": {
+    "dotnex only tool": {
       "commandName": "Project",
       "commandLineArgs": "dotnetsay"
     },
-    "dotnettoolrun multiple arguments": {
+    "dotnex multiple arguments": {
       "commandName": "Project",
       "commandLineArgs": "dotnetsay hello world"
     },
-    "dotnettoolrun with version": {
+    "dotnex with version": {
       "commandName": "Project",
       "commandLineArgs": "-v 2.1.4 dotnetsay hello world"
     },
-    "dotnettoolrun with version and framework": {
+    "dotnex with version and framework": {
       "commandName": "Project",
       "commandLineArgs": "-v 2.1.4 -f netcoreapp1.0 dotnetsay hello world"
     },
-    "dotnettoolrun with version and framework no cache": {
+    "dotnex with version and framework no cache": {
       "commandName": "Project",
       "commandLineArgs": "-v 2.1.4 -r dotnetsay hello world"
     },
-    "dotnettoolrun clear cache": {
+    "dotnex clear cache": {
       "commandName": "Project",
       "commandLineArgs": "--remove-cache"
     },
-    "dotnettoolrun help": {
+    "dotnex help": {
       "commandName": "Project",
       "commandLineArgs": "-h"
     }

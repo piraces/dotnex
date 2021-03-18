@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace dotnettoolrun
+namespace dotnex
 {
     public class ToolHandler
     {

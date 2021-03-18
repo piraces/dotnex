@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace dotnettoolrun
+namespace dotnex
 {
     public class CliCommandLineWrapper
     {

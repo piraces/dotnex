@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnex", "src\dotnex\dotnex.csproj", "{70110021-7523-42AC-8AC1-9EA23ADE15F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnex", "src\dotnex\dotnex.csproj", "{48FB0B53-CC53-441D-B41C-CBFACF82A7BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70110021-7523-42AC-8AC1-9EA23ADE15F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70110021-7523-42AC-8AC1-9EA23ADE15F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70110021-7523-42AC-8AC1-9EA23ADE15F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70110021-7523-42AC-8AC1-9EA23ADE15F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FB0B53-CC53-441D-B41C-CBFACF82A7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FB0B53-CC53-441D-B41C-CBFACF82A7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FB0B53-CC53-441D-B41C-CBFACF82A7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FB0B53-CC53-441D-B41C-CBFACF82A7BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E75EAEAF-1685-4B40-9F7C-47E9DB6FD412}
+		SolutionGuid = {7B2246F3-0322-4C69-B10C-8513228BAE52}
 	EndGlobalSection
 EndGlobal

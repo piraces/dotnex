@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>A simple .NET tool to execute other dotnet tools without installing them globally or in a project.</Description>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1;netcoreapp3.1;net5.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <LangVersion>9</LangVersion>
     <Nullable>Enable</Nullable>
     <VersionPrefix>0.1.2</VersionPrefix>

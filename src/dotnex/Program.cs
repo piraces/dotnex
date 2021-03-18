@@ -3,7 +3,7 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.Threading.Tasks;
 
-namespace dotnettoolrun
+namespace dotnex
 {
     public class Program
     {

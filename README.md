@@ -55,7 +55,11 @@ Install the [dotnet cli](https://dotnet.microsoft.com/download) (included in the
 
 ```
 dotnet tool install -g dotnex
-```
+```f
+
+### SDK version
+
+`dotnex` is actually built for .NET 5. The main idea is to maintain `dotnex` up-to-date with the current, most stable release of dotnet recommended to use at the date by Microsoft.
 
 ## Contributions
 
