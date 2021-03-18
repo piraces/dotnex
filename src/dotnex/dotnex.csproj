@@ -2,20 +2,29 @@
   <PropertyGroup>
     <Description>A simple .NET tool to execute other dotnet tools without installing them globally or in a project.</Description>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1;netcoreapp3.1;net5.0</TargetFramework>
     <LangVersion>9</LangVersion>
     <Nullable>Enable</Nullable>
-    <VersionPrefix>0.1.1</VersionPrefix>
-    <PackageProjectUrl>https://piraces.github.io/dotnet-tool-run/</PackageProjectUrl>
+    <VersionPrefix>0.1.2</VersionPrefix>
+    <PackageProjectUrl>https://piraces.github.io/dotnex/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>dotnet, global tools, run, run once, dotnet-cli</PackageTags>
     <Copyright>Raúl Piracés</Copyright>
     <Authors>Raúl Piracés (@piraces_)</Authors>
     <PackAsTool>true</PackAsTool>
-    <AssemblyName>dotnet-tool-run</AssemblyName>
-    <RootNamespace>dotnet-tool-run</RootNamespace>
+    <AssemblyName>dotnex</AssemblyName>
+    <RootNamespace>dotnex</RootNamespace>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="System.CommandLine" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
