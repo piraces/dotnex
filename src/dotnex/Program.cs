@@ -1,35 +1,62 @@
 ﻿using System;
 using System.CommandLine;
-using System.CommandLine.Invocation;
 using System.Threading.Tasks;
 
 namespace dotnex
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static int Main(string[] args)
         {
-            
-            var rootCommand = new RootCommand
+            var versionOption = new Option<string>(
+                    new[] { "--use-version", "-v" },
+                    "Version of the tool to use");
+
+            var frameworkOption = new Option<string>(
+                    new[] { "--framework", "-f" },
+                    "Target framework for the tool");
+
+            var removeCacheOption = new Option<bool>(
+                    new[] { "--remove-cache", "-r" },
+                    "Flag to remove the local cache before running the tool (can be run without tool)");
+
+            var toolArgument = new Argument<string?>("TOOL", () => null, "The NuGet Package Id of the tool to execute");
+
+            var toolArgsArgument = new Argument<string[]>("TOOL-ARGS", "Arguments to pass to the tool to execute");
+
+            var rootCommand = new RootCommand("Execute other dotnet tools without installing them globally or in a project")
             {
-                new Option<string>(
-                    new[]{ "--version", "-v" },
-                    "Version of the tool to use"),
-                new Option<string>(
-                    new[]{ "--framework", "-f" },
-                    "Target framework for the tool"),
-                new Option<bool>(
-                    new[]{ "--remove-cache", "-r" },
-                    "Flag to remove the local cache before running the tool (can be run without tool)"),
-                new Argument<string?>("TOOL", () => null, "The NuGet Package Id of the tool to execute"),
-                new Argument<string[]>("TOOL-ARGS", "Arguments to pass to the tool to execute")
+                versionOption,
+                frameworkOption,
+                removeCacheOption,
+                toolArgument,
+                toolArgsArgument
             };
-            
-            rootCommand.Handler = CommandHandler.Create<string?, string, string, bool, string[]?>(Execute);
- 
-            return rootCommand.InvokeAsync(args).Result;
+
+            rootCommand.SetHandler(async (string? tool, string version, string framework, bool removeCache, string[]? toolArgs) => {
+                await Execute(tool, version, framework, removeCache, toolArgs);
+            }, versionOption, frameworkOption, removeCacheOption, toolArgument, toolArgsArgument);
+
+            return rootCommand.Invoke(args);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tool"></param>
+        /// <param name="version"></param>
+        /// <param name="framework"></param>
+        /// <param name="removeCache"></param>
+        /// <param name="toolArgs"></param>
+        /// <returns></returns>
         private static async Task<int> Execute(string? tool, string version, string framework, bool removeCache,
             string[]? toolArgs)
         {

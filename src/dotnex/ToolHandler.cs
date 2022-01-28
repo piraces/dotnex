@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace dotnex
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ToolHandler
     {
         private const string NUGET_URL = "https://www.nuget.org/packages/";
@@ -22,6 +25,14 @@ namespace dotnex
         private bool _removeCache;
         private string _tempFolder;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="toolName"></param>
+        /// <param name="version"></param>
+        /// <param name="framework"></param>
+        /// <param name="removeCache"></param>
+        /// <param name="toolArgs"></param>
         public ToolHandler(string toolName, string? version = null, string? framework = null, bool removeCache = false,
             string? toolArgs = null)
         {
@@ -34,6 +45,10 @@ namespace dotnex
             _dotnetInstallCommand = new CliCommandLineWrapper(installArguments, true);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> StartTool()
         {
             if (_removeCache)
@@ -47,15 +62,27 @@ namespace dotnex
                 return 1;
             }
             await _dotnetInstallCommand.StartCliCommand();
+
             return await StartToolProcess();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> CheckValidTool()
         {
             var response = await _httpClient.GetAsync($"{NUGET_URL}{_toolName}");
             return response.IsSuccessStatusCode;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="toolName"></param>
+        /// <param name="version"></param>
+        /// <param name="framework"></param>
+        /// <returns></returns>
         private string[] GetToolInstallCliProcessArgs(string toolName, string? version, string? framework) {
             var args = new[]
             {
@@ -79,6 +106,10 @@ namespace dotnex
             return args;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private async Task<int> StartToolProcess()
         {
             var toolProcess = new Process
@@ -90,7 +121,13 @@ namespace dotnex
                 }
             };
             toolProcess.Start();
+
+#if NET5_0_OR_GREATER
             await toolProcess.WaitForExitAsync();
+#else
+            await Task.Run(() => toolProcess.WaitForExit()); // TODO
+#endif
+
             return toolProcess.ExitCode;
         }
     }

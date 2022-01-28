@@ -5,12 +5,19 @@ using System.Security;
 
 namespace dotnex
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class CacheManager
     {
         private const string TEMP_FOLDER_NAME = "dotnex";
         
         private static string _tempFolder = Assembly.GetExecutingAssembly().Location;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static int RemoveAllCachedFiles()
         {
             var tempFolder = GetTempFolder();
@@ -29,6 +36,10 @@ namespace dotnex
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string GetTempFolder()
         {
             try
