@@ -72,7 +72,7 @@ namespace dotnex
             var finalToolArgs = toolArgs != null ? string.Join(' ', toolArgs) : null;
             if (!string.IsNullOrWhiteSpace(tool))
             {
-                var toolHandler = new ToolHandler(tool, version, framework, removeCache, finalToolArgs);
+                var toolHandler = new ToolHandler(tool, version, framework, feed, removeCache, finalToolArgs);
                 var existingPublishedTool = await toolHandler.CheckValidTool();
                 if (existingPublishedTool)
                 {

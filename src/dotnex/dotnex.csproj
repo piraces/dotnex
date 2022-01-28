@@ -16,6 +16,10 @@
     <RootNamespace>dotnex</RootNamespace>
     <PackageIcon>logo.png</PackageIcon>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <RepositoryUrl>https://github.com/piraces/dotnex</RepositoryUrl>
   </PropertyGroup>
 
