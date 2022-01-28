@@ -67,6 +67,6 @@ Feel free to open an issue or a PR if you want to without any problem :)
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 See the `LICENSE` file in the root of this repository.

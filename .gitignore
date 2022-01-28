@@ -351,3 +351,12 @@ MigrationBackup/
 
 # JetBrains IDEs
 .idea/
+
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+_site
+/**/docs/doc/*.yml
+/**/docs/doc/.manifest
