@@ -5,14 +5,16 @@ using System.Threading.Tasks;
 namespace dotnex
 {
     /// <summary>
-    /// 
+    /// Main class of dotnex and entry point.
+    /// Contains the options specification and description, the main handler and the root command definition (using System.CommandLine).
     /// </summary>
     public class Program
     {
         /// <summary>
-        /// 
+        /// Main entry point.
+        /// Composes the options and arguments, initializes the root command, sets the handler and invoke the root command.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args">Command line arguments passed via STDIN</param>
         /// <returns></returns>
         public static int Main(string[] args)
         {
@@ -23,6 +25,10 @@ namespace dotnex
             var frameworkOption = new Option<string>(
                     new[] { "--framework", "-f" },
                     "Target framework for the tool");
+
+            var feedOption = new Option<string>(
+                    new[] { "--feed-directory", "-d" },
+                    "Feed to retrieve dotnet tools from (defaults to Nuget.org)");
 
             var removeCacheOption = new Option<bool>(
                     new[] { "--remove-cache", "-r" },
@@ -37,27 +43,30 @@ namespace dotnex
                 versionOption,
                 frameworkOption,
                 removeCacheOption,
+                feedOption,
                 toolArgument,
                 toolArgsArgument
             };
 
-            rootCommand.SetHandler(async (string? tool, string version, string framework, bool removeCache, string[]? toolArgs) => {
-                await Execute(tool, version, framework, removeCache, toolArgs);
-            }, versionOption, frameworkOption, removeCacheOption, toolArgument, toolArgsArgument);
+            rootCommand.SetHandler(async (string? tool, string version, string framework, string feed, bool removeCache, string[]? toolArgs) => {
+                await Execute(tool, version, framework, feed, removeCache, toolArgs);
+            }, versionOption, frameworkOption, feedOption, removeCacheOption, toolArgument, toolArgsArgument);
 
             return rootCommand.Invoke(args);
         }
 
         /// <summary>
-        /// 
+        /// Main method that handles all the inputs and executes the external tool with the provided tool arguments and options.
+        /// The external tool downloaded and executed follows the version and target framework specified.
         /// </summary>
-        /// <param name="tool"></param>
-        /// <param name="version"></param>
-        /// <param name="framework"></param>
-        /// <param name="removeCache"></param>
-        /// <param name="toolArgs"></param>
-        /// <returns></returns>
-        private static async Task<int> Execute(string? tool, string version, string framework, bool removeCache,
+        /// <param name="tool">The external dotnet tool to execute</param>
+        /// <param name="version">The version of the dotnet tool to download and execute</param>
+        /// <param name="framework">The target framework for the dotnet tool</param>
+        /// <param name="feed">NuGet feed to fetch the dotnet tools from (default Nuget.org)</param>
+        /// <param name="removeCache">If true, it clears the main cache of dotnex, where dotnet tools are stored for subsequent executions</param>
+        /// <param name="toolArgs">Options and arguments to pass to the external dotnet tool</param>
+        /// <returns>The exit code resulting from the execution of the external dotnet tool</returns>
+        private static async Task<int> Execute(string? tool, string version, string framework, string feed, bool removeCache,
             string[]? toolArgs)
         {
             var finalToolArgs = toolArgs != null ? string.Join(' ', toolArgs) : null;
