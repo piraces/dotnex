@@ -18,4 +18,4 @@ jobs:
     - name: Publish NuGet to Nuget.org
       run: dotnet nuget push ./src/dotnex/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TOKEN }} --skip-duplicate
     - name: Publish to GitHub packages
-      run: dotnet nuget push ./src/dotnex/bin/Release/*.nupkg --source https://nuget.pkg.github.com/piraces/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+      run: dotnet nuget push ./src/dotnex/bin/Release/*.nupkg --source https://nuget.pkg.github.com/piraces/index.json -k ${{ secrets.GITHUB_TOKEN }}  --skip-duplicate
