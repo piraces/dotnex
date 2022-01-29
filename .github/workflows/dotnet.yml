@@ -15,5 +15,9 @@ jobs:
       run: dotnet restore
     - name: Pack
       run: dotnet pack --configuration Release /p:OfficialBuild=true
-    - name: Publish NuGet
+    - name: Publish NuGet to Nuget.org
       run: dotnet nuget push ./src/dotnex/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TOKEN }} --skip-duplicate
+    - name: Add GitHub packages source
+      run: dotnet nuget add source --username piraces --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/piraces/index.json"
+    - name: Publish to GitHub packages
+      run: dotnet nuget push ./src/dotnex/bin/Release/*.nupkg --api-key ${{ secrets.PAT }} --source "github" --skip-duplicate
