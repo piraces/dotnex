@@ -24,7 +24,6 @@ namespace dotnex
         private string? _toolArgs;
         private bool _removeCache;
         private string _tempFolder;
-        private string _nugetFeedUrl;
 
         /// <summary>
         /// Constructor for ToolHandler.
@@ -33,16 +32,14 @@ namespace dotnex
         /// <param name="toolName">Name of the dotnet tool</param>
         /// <param name="version">Version of the dotnet tool to download, install and execute (default latest)</param>
         /// <param name="framework">Target framework for the tool (default same as the current dotnet sdk used to run this process)</param>
-        /// <param name="feed">NuGet feed to fetch the dotnet tools from (default Nuget.org)</param>
         /// <param name="removeCache">If true, cache is purged is exists for this tool. Otherwise it will use cache if exists (default false)</param>
         /// <param name="toolArgs">Options/arguments to invoke the tool with (default none)</param>
-        public ToolHandler(string toolName, string? version = null, string? framework = null, string? feed = null, bool removeCache = false,
+        public ToolHandler(string toolName, string? version = null, string? framework = null, bool removeCache = false,
             string? toolArgs = null)
         {
             _toolName = toolName;
             _toolArgs = toolArgs;
             _removeCache = removeCache;
-            _nugetFeedUrl = string.IsNullOrEmpty(feed) ? DEFAULT_NUGET_FEED : feed;
             _tempFolder = CacheManager.GetTempFolder();
             _dotnetManifestCommand = new CliCommandLineWrapper(_toolManifestCliProcessArgs, true);
             var installArguments = GetToolInstallCliProcessArgs(toolName, version, framework);
@@ -76,7 +73,7 @@ namespace dotnex
         /// <returns>True if the tool exists in the NuGet package repository, false otherwise</returns>
         public async Task<bool> CheckValidTool()
         {
-            var response = await _httpClient.GetAsync($"{_nugetFeedUrl}{_toolName}");
+            var response = await _httpClient.GetAsync($"{DEFAULT_NUGET_FEED}{_toolName}");
             return response.IsSuccessStatusCode;
         }
 
