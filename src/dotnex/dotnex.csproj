@@ -15,6 +15,7 @@
     <AssemblyName>dotnex</AssemblyName>
     <RootNamespace>dotnex</RootNamespace>
     <PackageIcon>logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/piraces/dotnex</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
