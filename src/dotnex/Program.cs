@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CommandLine;
+using System.CommandLine.Invocation;
 using System.Threading.Tasks;
 
 namespace dotnex
@@ -43,8 +44,8 @@ namespace dotnex
                 toolArgsArgument
             };
 
-            rootCommand.SetHandler(async (string? tool, string version, string framework, bool removeCache, string[]? toolArgs) => {
-                await Execute(tool, version, framework, removeCache, toolArgs);
+            rootCommand.SetHandler(async (InvocationContext invocationContext, string? tool, string version, string framework, bool removeCache, string[]? toolArgs) => {
+                await Execute(invocationContext, tool, version, framework, removeCache, toolArgs);
             }, toolArgument, versionOption, frameworkOption, removeCacheOption, toolArgsArgument);
 
             return rootCommand.Invoke(args);
@@ -54,13 +55,13 @@ namespace dotnex
         /// Main method that handles all the inputs and executes the external tool with the provided tool arguments and options.
         /// The external tool downloaded and executed follows the version and target framework specified.
         /// </summary>
+        /// <param name="invocationContext">Invocation context from System.CommandLine</param>
         /// <param name="tool">The external dotnet tool to execute</param>
         /// <param name="version">The version of the dotnet tool to download and execute</param>
         /// <param name="framework">The target framework for the dotnet tool</param>
         /// <param name="removeCache">If true, it clears the main cache of dotnex, where dotnet tools are stored for subsequent executions</param>
         /// <param name="toolArgs">Options and arguments to pass to the external dotnet tool</param>
-        /// <returns>The exit code resulting from the execution of the external dotnet tool</returns>
-        private static async Task<int> Execute(string? tool, string version, string framework, bool removeCache,
+        private static async Task Execute(InvocationContext invocationContext, string? tool, string version, string framework, bool removeCache,
             string[]? toolArgs)
         {
             var finalToolArgs = toolArgs != null ? string.Join(' ', toolArgs) : null;
@@ -70,19 +71,23 @@ namespace dotnex
                 var existingPublishedTool = await toolHandler.CheckValidTool();
                 if (existingPublishedTool)
                 {
-                    return await toolHandler.StartTool();
+                    var result = await toolHandler.StartTool();
+                    invocationContext.ExitCode = result;
+                    return;
                 }
                 Console.WriteLine($"[X] The specified tool '{tool}' does not exist... " +
                                   $"Please check the correct name at https://www.nuget.org/packages");
-                return 1;
+                invocationContext.ExitCode = 1;
+                return;
             }
 
             if (removeCache)
             {
-                return CacheManager.RemoveAllCachedFiles();
+                CacheManager.RemoveAllCachedFiles();
+                return;
             }
             Console.WriteLine("[X] Please specify a tool or a valid option to work without tool...");
-            return 1;
+            invocationContext.ExitCode = 1;
         }
     }
 }
