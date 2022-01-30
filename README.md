@@ -19,6 +19,7 @@ This simple tool provides the minimum necessary to run dotnet tools without the 
 
 - **SourceLink for debugging**. The binaries can be debbuged with [Source Link](https://github.com/dotnet/sourcelink). Example (with Developer Command Prompt for VS): `devenv /debugexe c:\Users\rich\.dotnet\tools\dotnex.exe`
 
+- **Symbols package**. A symbols package is published too in the publish process in order to ease the debugging of the NuGet package.
 
 
 ## Usage
@@ -29,14 +30,15 @@ dotnex [options] <TOOL> [<TOOL-ARGS>...]
 Where the arguments and options are the following:
 ```
 Arguments:
-  <TOOL>         The NuGet Package Id of the tool to execute
-  <TOOL-ARGS>    Arguments to pass to the tool to execute
+  <TOOL>       The NuGet Package Id of the tool to execute []
+  <TOOL-ARGS>  Arguments to pass to the tool to execute
 
 Options:
-  -v, --version <version>        Version of the tool to use
-  -f, --framework <framework>    Target framework for the tool
-  -r, --remove-cache             Flag to remove the local cache before running the tool (can be run without tool)
-  -?, -h, --help                 Show help and usage information
+  -v, --use-version <use-version>  Version of the tool to use
+  -f, --framework <framework>      Target framework for the tool
+  -r, --remove-cache               Flag to remove the local cache before running the tool (can be run without tool)
+  --version                        Show version information
+  -?, -h, --help                   Show help and usage information
 ```
 
 This same output can be obtained running the tool with the help option:
@@ -59,7 +61,12 @@ dotnet tool install -g dotnex
 
 ### SDK version
 
-`dotnex` is actually built for .NET 5. The main idea is to maintain `dotnex` up-to-date with the current, most stable release of dotnet recommended to use at the date by Microsoft.
+`dotnex` is published for all current supported SDKs from Microsoft:
+- .NET Core 3.1.x
+- .NET 5.0.x
+- .NET 6.0.x
+
+The main idea is to maintain `dotnex` up-to-date with all current supported SDKs from Microsoft.
 
 ## Contributions
 
@@ -67,6 +74,6 @@ Feel free to open an issue or a PR if you want to without any problem :)
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 See the `LICENSE` file in the root of this repository.
