@@ -45,7 +45,7 @@ namespace dotnex
 
             rootCommand.SetHandler(async (string? tool, string version, string framework, bool removeCache, string[]? toolArgs) => {
                 await Execute(tool, version, framework, removeCache, toolArgs);
-            }, versionOption, frameworkOption, removeCacheOption, toolArgument, toolArgsArgument);
+            }, toolArgument, versionOption, frameworkOption, removeCacheOption, toolArgsArgument);
 
             return rootCommand.Invoke(args);
         }
