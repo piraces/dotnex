@@ -1,6 +1,9 @@
 # dotnex
 
 ![.NET Tool Release](https://github.com/piraces/dotnex/workflows/.NET%20Tool%20Release/badge.svg)
+[![.NET Docs publish](https://github.com/piraces/dotnex/actions/workflows/docs.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/docs.yml)
+[![.NET CI](https://github.com/piraces/dotnex/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/dotnet-test.yml)
+[![CodeQL](https://github.com/piraces/dotnex/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/codeql-analysis.yml)
 ![Nuget](https://img.shields.io/nuget/v/dotnex)
 
 A simple .NET tool to execute other dotnet tools without installing them globally or in a project (a similar approach to [npx](https://www.npmjs.com/package/npx) from [npm](https://www.npmjs.com/)).
