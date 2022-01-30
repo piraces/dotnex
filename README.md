@@ -4,7 +4,10 @@
 [![.NET Docs publish](https://github.com/piraces/dotnex/actions/workflows/docs.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/docs.yml)
 [![.NET CI](https://github.com/piraces/dotnex/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/dotnet-test.yml)
 [![CodeQL](https://github.com/piraces/dotnex/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/piraces/dotnex/actions/workflows/codeql-analysis.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=piraces_dotnex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=piraces_dotnex)
+
 ![Nuget](https://img.shields.io/nuget/v/dotnex)
+
 
 A simple .NET tool to execute other dotnet tools without installing them globally or in a project (a similar approach to [npx](https://www.npmjs.com/package/npx) from [npm](https://www.npmjs.com/)).
 
