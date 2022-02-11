@@ -1,0 +1,146 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: dotnex
+  name: dotnex
+  href: doc/dotnex.html
+  commentId: N:dotnex
+  fullName: dotnex
+  nameWithType: dotnex
+- uid: dotnex.CacheManager
+  name: CacheManager
+  href: doc/dotnex.CacheManager.html
+  commentId: T:dotnex.CacheManager
+  fullName: dotnex.CacheManager
+  nameWithType: CacheManager
+- uid: dotnex.CacheManager.GetTempFolder
+  name: GetTempFolder()
+  href: doc/dotnex.CacheManager.html#dotnex_CacheManager_GetTempFolder
+  commentId: M:dotnex.CacheManager.GetTempFolder
+  fullName: dotnex.CacheManager.GetTempFolder()
+  nameWithType: CacheManager.GetTempFolder()
+- uid: dotnex.CacheManager.GetTempFolder*
+  name: GetTempFolder
+  href: doc/dotnex.CacheManager.html#dotnex_CacheManager_GetTempFolder_
+  commentId: Overload:dotnex.CacheManager.GetTempFolder
+  isSpec: "True"
+  fullName: dotnex.CacheManager.GetTempFolder
+  nameWithType: CacheManager.GetTempFolder
+- uid: dotnex.CacheManager.RemoveAllCachedFiles
+  name: RemoveAllCachedFiles()
+  href: doc/dotnex.CacheManager.html#dotnex_CacheManager_RemoveAllCachedFiles
+  commentId: M:dotnex.CacheManager.RemoveAllCachedFiles
+  fullName: dotnex.CacheManager.RemoveAllCachedFiles()
+  nameWithType: CacheManager.RemoveAllCachedFiles()
+- uid: dotnex.CacheManager.RemoveAllCachedFiles*
+  name: RemoveAllCachedFiles
+  href: doc/dotnex.CacheManager.html#dotnex_CacheManager_RemoveAllCachedFiles_
+  commentId: Overload:dotnex.CacheManager.RemoveAllCachedFiles
+  isSpec: "True"
+  fullName: dotnex.CacheManager.RemoveAllCachedFiles
+  nameWithType: CacheManager.RemoveAllCachedFiles
+- uid: dotnex.CliCommandLineWrapper
+  name: CliCommandLineWrapper
+  href: doc/dotnex.CliCommandLineWrapper.html
+  commentId: T:dotnex.CliCommandLineWrapper
+  fullName: dotnex.CliCommandLineWrapper
+  nameWithType: CliCommandLineWrapper
+- uid: dotnex.CliCommandLineWrapper.#ctor(System.String[],System.Boolean,System.Nullable{System.String},ProcessWindowStyle)
+  name: CliCommandLineWrapper(String[], Boolean, Nullable<String>, ProcessWindowStyle)
+  href: doc/dotnex.CliCommandLineWrapper.html#dotnex_CliCommandLineWrapper__ctor_System_String___System_Boolean_System_Nullable_System_String__ProcessWindowStyle_
+  commentId: M:dotnex.CliCommandLineWrapper.#ctor(System.String[],System.Boolean,System.Nullable{System.String},ProcessWindowStyle)
+  name.vb: CliCommandLineWrapper(String(), Boolean, Nullable(Of String), ProcessWindowStyle)
+  fullName: dotnex.CliCommandLineWrapper.CliCommandLineWrapper(System.String[], System.Boolean, System.Nullable<System.String>, ProcessWindowStyle)
+  fullName.vb: dotnex.CliCommandLineWrapper.CliCommandLineWrapper(System.String(), System.Boolean, System.Nullable(Of System.String), ProcessWindowStyle)
+  nameWithType: CliCommandLineWrapper.CliCommandLineWrapper(String[], Boolean, Nullable<String>, ProcessWindowStyle)
+  nameWithType.vb: CliCommandLineWrapper.CliCommandLineWrapper(String(), Boolean, Nullable(Of String), ProcessWindowStyle)
+- uid: dotnex.CliCommandLineWrapper.#ctor*
+  name: CliCommandLineWrapper
+  href: doc/dotnex.CliCommandLineWrapper.html#dotnex_CliCommandLineWrapper__ctor_
+  commentId: Overload:dotnex.CliCommandLineWrapper.#ctor
+  isSpec: "True"
+  fullName: dotnex.CliCommandLineWrapper.CliCommandLineWrapper
+  nameWithType: CliCommandLineWrapper.CliCommandLineWrapper
+- uid: dotnex.CliCommandLineWrapper.StartCliCommand
+  name: StartCliCommand()
+  href: doc/dotnex.CliCommandLineWrapper.html#dotnex_CliCommandLineWrapper_StartCliCommand
+  commentId: M:dotnex.CliCommandLineWrapper.StartCliCommand
+  fullName: dotnex.CliCommandLineWrapper.StartCliCommand()
+  nameWithType: CliCommandLineWrapper.StartCliCommand()
+- uid: dotnex.CliCommandLineWrapper.StartCliCommand*
+  name: StartCliCommand
+  href: doc/dotnex.CliCommandLineWrapper.html#dotnex_CliCommandLineWrapper_StartCliCommand_
+  commentId: Overload:dotnex.CliCommandLineWrapper.StartCliCommand
+  isSpec: "True"
+  fullName: dotnex.CliCommandLineWrapper.StartCliCommand
+  nameWithType: CliCommandLineWrapper.StartCliCommand
+- uid: dotnex.Program
+  name: Program
+  href: doc/dotnex.Program.html
+  commentId: T:dotnex.Program
+  fullName: dotnex.Program
+  nameWithType: Program
+- uid: dotnex.Program.Main(System.String[])
+  name: Main(String[])
+  href: doc/dotnex.Program.html#dotnex_Program_Main_System_String___
+  commentId: M:dotnex.Program.Main(System.String[])
+  name.vb: Main(String())
+  fullName: dotnex.Program.Main(System.String[])
+  fullName.vb: dotnex.Program.Main(System.String())
+  nameWithType: Program.Main(String[])
+  nameWithType.vb: Program.Main(String())
+- uid: dotnex.Program.Main*
+  name: Main
+  href: doc/dotnex.Program.html#dotnex_Program_Main_
+  commentId: Overload:dotnex.Program.Main
+  isSpec: "True"
+  fullName: dotnex.Program.Main
+  nameWithType: Program.Main
+- uid: dotnex.ToolHandler
+  name: ToolHandler
+  href: doc/dotnex.ToolHandler.html
+  commentId: T:dotnex.ToolHandler
+  fullName: dotnex.ToolHandler
+  nameWithType: ToolHandler
+- uid: dotnex.ToolHandler.#ctor(System.String,System.Nullable{System.String},System.Nullable{System.String},System.Boolean,System.Nullable{System.String})
+  name: ToolHandler(String, Nullable<String>, Nullable<String>, Boolean, Nullable<String>)
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler__ctor_System_String_System_Nullable_System_String__System_Nullable_System_String__System_Boolean_System_Nullable_System_String__
+  commentId: M:dotnex.ToolHandler.#ctor(System.String,System.Nullable{System.String},System.Nullable{System.String},System.Boolean,System.Nullable{System.String})
+  name.vb: ToolHandler(String, Nullable(Of String), Nullable(Of String), Boolean, Nullable(Of String))
+  fullName: dotnex.ToolHandler.ToolHandler(System.String, System.Nullable<System.String>, System.Nullable<System.String>, System.Boolean, System.Nullable<System.String>)
+  fullName.vb: dotnex.ToolHandler.ToolHandler(System.String, System.Nullable(Of System.String), System.Nullable(Of System.String), System.Boolean, System.Nullable(Of System.String))
+  nameWithType: ToolHandler.ToolHandler(String, Nullable<String>, Nullable<String>, Boolean, Nullable<String>)
+  nameWithType.vb: ToolHandler.ToolHandler(String, Nullable(Of String), Nullable(Of String), Boolean, Nullable(Of String))
+- uid: dotnex.ToolHandler.#ctor*
+  name: ToolHandler
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler__ctor_
+  commentId: Overload:dotnex.ToolHandler.#ctor
+  isSpec: "True"
+  fullName: dotnex.ToolHandler.ToolHandler
+  nameWithType: ToolHandler.ToolHandler
+- uid: dotnex.ToolHandler.CheckValidTool
+  name: CheckValidTool()
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler_CheckValidTool
+  commentId: M:dotnex.ToolHandler.CheckValidTool
+  fullName: dotnex.ToolHandler.CheckValidTool()
+  nameWithType: ToolHandler.CheckValidTool()
+- uid: dotnex.ToolHandler.CheckValidTool*
+  name: CheckValidTool
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler_CheckValidTool_
+  commentId: Overload:dotnex.ToolHandler.CheckValidTool
+  isSpec: "True"
+  fullName: dotnex.ToolHandler.CheckValidTool
+  nameWithType: ToolHandler.CheckValidTool
+- uid: dotnex.ToolHandler.StartTool
+  name: StartTool()
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler_StartTool
+  commentId: M:dotnex.ToolHandler.StartTool
+  fullName: dotnex.ToolHandler.StartTool()
+  nameWithType: ToolHandler.StartTool()
+- uid: dotnex.ToolHandler.StartTool*
+  name: StartTool
+  href: doc/dotnex.ToolHandler.html#dotnex_ToolHandler_StartTool_
+  commentId: Overload:dotnex.ToolHandler.StartTool
+  isSpec: "True"
+  fullName: dotnex.ToolHandler.StartTool
+  nameWithType: ToolHandler.StartTool
